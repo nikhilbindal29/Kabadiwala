@@ -1,0 +1,79 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# Environment variables
+.env
+.env.local
+.env.production
+*.env
+
+# Backend data (keep structure, ignore data files)
+backend/data/csv/*.csv
+backend/data/uploads/*
+backend/data/exports/*
+!backend/data/csv/.gitkeep
+!backend/data/uploads/.gitkeep
+!backend/data/exports/.gitkeep
+backend/data/backups/
+
+# Node / React Native / Expo
+node_modules/
+mobile/node_modules/
+.expo/
+dist/
+web-build/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+*.aab
+*.apk
+*.ipa
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# IDE
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# EAS
+.eas/
+

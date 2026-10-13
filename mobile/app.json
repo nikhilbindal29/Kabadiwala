@@ -1,0 +1,61 @@
+{
+  "expo": {
+    "name": "ScrapSetu",
+    "slug": "scrapsetu",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "scrapsetu",
+    "userInterfaceStyle": "light",
+    "platforms": ["ios", "android"],
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#2D6A4F"
+    },
+    "android": {
+      "package": "in.scrapsetu.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#2D6A4F"
+      },
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "RECEIVE_BOOT_COMPLETED",
+        "VIBRATE"
+      ]
+    },
+    "ios": {
+      "bundleIdentifier": "in.scrapsetu.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "ScrapSetu needs camera access to photograph items for listings",
+        "NSPhotoLibraryUsageDescription": "ScrapSetu needs photo library access to upload item photos",
+        "NSLocationWhenInUseUsageDescription": "ScrapSetu uses location to find nearby collectors and service areas"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "ScrapSetu needs access to your photos for item listings"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "ScrapSetu uses location to find nearby pickups"
+        }
+      ],
+      "expo-notifications"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
