@@ -1,0 +1,16 @@
+# ScrapSetu web frontend (Expo Router, exported as a static single-page app).
+# The FastAPI backend in /backend is NOT deployed by Netlify; host it separately
+# and set EXPO_PUBLIC_API_URL in the Netlify environment variables.
+[build]
+  base = "mobile"
+  command = "npm run build:web"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA fallback so deep links / refreshes on internal routes serve index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
