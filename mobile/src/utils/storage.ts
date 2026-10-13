@@ -1,4 +1,21 @@
-import * as SecureStore from 'expo-secure-store';
+import * as NativeSecureStore from 'expo-secure-store';
+import { Platform } from 'react-native';
+
+// expo-secure-store has no web implementation; fall back to localStorage on web.
+const SecureStore =
+  Platform.OS === 'web'
+    ? {
+        async getItemAsync(key: string): Promise<string | null> {
+          return typeof localStorage === 'undefined' ? null : localStorage.getItem(key);
+        },
+        async setItemAsync(key: string, value: string): Promise<void> {
+          if (typeof localStorage !== 'undefined') localStorage.setItem(key, value);
+        },
+        async deleteItemAsync(key: string): Promise<void> {
+          if (typeof localStorage !== 'undefined') localStorage.removeItem(key);
+        },
+      }
+    : NativeSecureStore;
 
 const ACCESS_TOKEN_KEY = 'scrapsetu_access_token';
 const REFRESH_TOKEN_KEY = 'scrapsetu_refresh_token';
