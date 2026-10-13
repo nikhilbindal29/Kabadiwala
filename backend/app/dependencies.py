@@ -8,11 +8,9 @@ from jose import JWTError
 
 from app.core.security import decode_token
 from app.repositories.user_repository import get_user_repository
-from app.schemas.user import UserResponse
+from app.schemas.user import UserOut
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/auth/login")
-
-
 def get_current_user(token: str = Depends(oauth2_scheme)) -> Dict[str, Any]:
     """Validate bearer token and return user record from CSV repository."""
     credentials_exception = HTTPException(

@@ -54,7 +54,7 @@ export default function RecyclerDashboard() {
           <Text style={styles.greeting}>Recycler Facility 👋</Text>
           <Text style={styles.subGreeting}>{user?.business_name || user?.full_name}</Text>
         </View>
-        <TouchableOpacity style={styles.profileBtn} onPress={() => router.push('/profile')}>
+        <TouchableOpacity style={styles.profileBtn} onPress={() => router.push({ pathname: '/profile' })}>
           <Ionicons name="person-circle-outline" size={32} color={Colors.primary} />
         </TouchableOpacity>
       </View>

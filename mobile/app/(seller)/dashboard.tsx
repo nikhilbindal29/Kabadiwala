@@ -53,7 +53,7 @@ export default function SellerDashboard() {
           <Text style={styles.greeting}>Hello, {user?.full_name || 'Seller'} 👋</Text>
           <Text style={styles.subGreeting}>Manage e-waste pickups & sales</Text>
         </View>
-        <TouchableOpacity style={styles.profileBtn} onPress={() => router.push('/profile')}>
+        <TouchableOpacity style={styles.profileBtn} onPress={() => router.push({ pathname: '/profile' })}>
           <Ionicons name="person-circle-outline" size={32} color={Colors.primary} />
         </TouchableOpacity>
       </View>
